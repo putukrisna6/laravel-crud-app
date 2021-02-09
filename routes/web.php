@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/create', function () {
+    return view('data.create');
+});
+
+Route::get(
+    '/data/create', [App\Http\Controllers\DataController::class, 'create']
+);
+Route::post(
+    '/data', [App\Http\Controllers\DataController::class, 'store']
+);
